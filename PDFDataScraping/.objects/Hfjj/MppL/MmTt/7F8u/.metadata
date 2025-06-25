@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Get Total Amount",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "7F8udNzhekqH-HbK3Hk24Q",
+  "Reference": "IsmE3_yZvkaypYNeDcsC5g/7F8udNzhekqH-HbK3Hk24Q",
+  "ParentRef": "IsmE3_yZvkaypYNeDcsC5g/MmTttx7qRE2ETlWpDE8rzA",
+  "Created": "2025-06-03T04:50:32.8456728Z",
+  "Updated": "2025-06-03T04:50:32.8456728Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

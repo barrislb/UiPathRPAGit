@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Extract Total Amount",
+  "Type": "Element",
+  "TaxonomyType": "Table",
+  "Id": "21Y8a7NqT0aHFNu1ncMREQ",
+  "Reference": "IsmE3_yZvkaypYNeDcsC5g/21Y8a7NqT0aHFNu1ncMREQ",
+  "ParentRef": "IsmE3_yZvkaypYNeDcsC5g/MmTttx7qRE2ETlWpDE8rzA",
+  "Created": "2025-06-03T06:16:05.8186448Z",
+  "Updated": "2025-06-04T08:05:44.5887154Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

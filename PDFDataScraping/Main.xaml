@@ -1,0 +1,294 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.Semantic.Activities.Models</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1110,4387" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Results" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dt_Results]" DisplayName="Build Results Data Table" sap:VirtualizedContainerService.HintSize="572,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Customer_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_x0020_Amount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;File_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Error_x0020_Message&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:ForEachFileX DisplayName="For Each Invoice PDF in Input Folder" Filter="*.pdf" Folder="G:\UiPath RPA Developer Course 7 Robots\PDFDataScraping\Input" sap:VirtualizedContainerService.HintSize="572,4272" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <TryCatch DisplayName="Try Process Each Invoice" sap:VirtualizedContainerService.HintSize="538,3991" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch.Variables>
+              <Variable x:TypeArguments="x:String" Name="InvoiceNumber" />
+              <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
+              <Variable x:TypeArguments="x:String" Name="InvoiceCoName" />
+              <Variable x:TypeArguments="x:String" Name="InvoiceTotalAmt" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_InvoiceTotal" />
+              <Variable x:TypeArguments="x:String" Default="G:\UiPath RPA Developer Course 7 Robots\PDFDataScraping\Output\Successful" Name="FileSuccessDestination" />
+              <Variable x:TypeArguments="x:String" Default="G:\UiPath RPA Developer Course 7 Robots\PDFDataScraping\Output\Failed" Name="FileFailedDestination" />
+            </TryCatch.Variables>
+            <TryCatch.Try>
+              <Sequence DisplayName="Scrape Invoice" sap:VirtualizedContainerService.HintSize="536,3104" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log PDF File Name" sap:VirtualizedContainerService.HintSize="502,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Processing: &quot;+CurrentFile.Name]" />
+                <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Always" DisplayName="Open Invoice Files in Adobe Acrobat DC" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="502,2211" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Background" OpenMode="Always" ScopeGuid="415523af-1ff6-4f88-adca-3ebf238f83f9" WindowResize="Maximize">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="468,1872" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Zoom Invoice To Fit Inside Acrobat" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="WindowMessages" Shortcuts="[d(hk)][d(ctrl)]0[u(ctrl)][u(hk)]" Version="V4">
+                          <uix:NKeyboardShortcuts.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NKeyboardShortcuts.VerifyOptions>
+                        </uix:NKeyboardShortcuts>
+                        <uix:NGetText DisplayName="Get Invoice Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="415523af-1ff6-4f88-adca-3ebf238f83f9" TextString="[InvoiceNumber]" Version="V4">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="532b16a8-0a56-4546-8d29-488963d4d7b2" ContentHash="0QtsAFiUVUK0jkIRERba-w" CvType="AnyWordGroup" DesignTimeRectangle="1003, 311, 29, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='?????  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl role='text' automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="9b062ef0-8e65-4408-a7d3-c0f3aa61ba92" ImageBase64="" InformativeScreenshot="cb4a78e77b46450f5d205c476dfeb7fc.png" Reference="IsmE3_yZvkaypYNeDcsC5g/jo-6QZYJ_k-1nKXYNvVzzw" ScopeSelectorArgument="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' title='Invoice 1.pdf - Adobe Acrobat Reader (64-bit)' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="532b16a8-0a56-4546-8d29-488963d4d7b2" CvTextArea="1002, 292, 94, 12" CvTextArgument="Invoice Number" CvType="Text" DesignTimeRectangle="1003, 294, 92, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='Invoice Number  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl name='Invoice Number  ' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Invoice Number' /&gt;" Guid="58e80812-1e7e-4c1f-815c-74b38c7581aa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAQCAYAAADpunr5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMDSURBVFhH7Va/a9tAFNa/of/Bm7dOmrRkyZKlgwav2TIIPASyeRAYCpkMApGpJWgMBINoV4O3UIS2DMZLBmM0mFDE1/d096STVErb2BEFfWCw7969H9/37p0tDOgVgwA94/0FKJ4RT8ZwghVyvfRfoEgRujYsy4LtJ9jr5beiEqDIQrjknANYlg03TFHovaPiaAK8IPHHKl/nBsn2VS0bRFluiOyYRewT+PaJBGAoEU5I/tFRi2B7EdJcZ81EnR2ZfMb7CmB2mI9F4MGuum2PLLxQe1w8JbSTG2RPkewP2K7v4Du6Ey0XfpxSxxs+q+4skGePCLyRWi/P80Zr3ezyCuRveo3w/hoO5e1Ml9jy0UqAQ50n+919b44RTSjfeMf/pGON4C0ekEQ++eQ9F9NkoxpSBPBuMNN5NYTPMyyFJznXiTFuNPjvb4BcZ02WjCnVAVLcBcLsQMY7rOe3JXnFJsbEpoDlmHnFJr6kpMbwk5euz9KWfE5ibJiwaGH4GGESP6PQZ7qdxwLMyH6HNJxQDCIvfEJeCaBtWHQRVkjUvpo1Uw3BWV2TkCfN0jgrdek6y9E6qutgbnRMM8aP7DPmzIPGGwQQ8rT9/ivmEZ8TYTThbGeea/js2irIOneO8aluh0AE4OQ29N0lO+q8+wWu/kkAiasFaNXfPmsKlKaqxmbOqq4OrwbeJEBd3CWCIEC84RFxTAHa620YAjDyJ4Q8GuwPcGg09CFAzU2NEwrwJ2tyVc8QrHctnzTn1/Ny1jZmKUX/9XobLQEIxXaJKb89QpoI0Borkm+z5r8RQOrSYzJfIeC49gRh2pSgw6uBSgAhTV0dNv6GZZm4WrOvZphxMtW+KdK5IrfCa/MRpkc8Wm/JXsjQPnUhpq3t3WJVPrYtH/yQRyv1yJYwfDVGE4mXRvCqEaR/c6dS3vVjSw2x/KI6uPQ/xlVwXXNgn8P7qP8A0KfMtRpzYuORj6z6O11sV4h82edYd1inD0aMrgiNGzDg/TEI0DMGAXrGIEDPGAToFcBPnXb334dl7tgAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <ui:LogMessage DisplayName="Log Invoice Number" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[InvoiceNumber]" />
+                        <uix:NGetText DisplayName="Get Invoice Date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="415523af-1ff6-4f88-adca-3ebf238f83f9" TextString="[InvoiceDate]" Version="V4">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="532b16a8-0a56-4546-8d29-488963d4d7b2" ContentHash="TIDEcC5j-EWBOO7fumQ24Q" CvType="AnyWordGroup" DesignTimeRectangle="1003, 279, 55, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='*/*/*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl role='text' automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="4678ab5d-a874-42f7-b6d7-b73f159509d1" ImageBase64="" InformativeScreenshot="d945793faf73fd0205962176711aa869.png" Reference="IsmE3_yZvkaypYNeDcsC5g/Kg3X64uoOUiGogzkb4Z33A" ScopeSelectorArgument="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' title='Invoice 1.pdf - Adobe Acrobat Reader (64-bit)' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="532b16a8-0a56-4546-8d29-488963d4d7b2" CvTextArea="1002, 262, 29, 11" CvTextArgument="Date" CvType="Text" DesignTimeRectangle="1003, 263, 27, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='Date  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl name='Date  ' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Date' /&gt;" Guid="6c354ceb-97f9-4518-9283-c6699366e612" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB8AAAAQCAYAAADu+KTsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVEhL7VOxasMwFNRvaO6aLT/gyUvmrh66Zhd4y27wHwgydvEPBLR1CXjrYLQbLRmCMaWYIq5PkezGIakJlHrJgcA86d29O8kMM+IhDqslYsbALlckIJVGG87dhkWjUjwJhSZUpjBy7gfgiGVFVK5gsM8TcKpF2X5igAOUWIL/mbiDrSBjDsZTqMbSPG/Ik0VIJoYoKhrqiDJbnSW2hFAHam6gdzkS7mpkIN3BDMT3iLNnSP0Zig7eaT8UZQ5BIj/OO9TFGpyvUdRd4O6H8rhT/AOtVpAiDg5p3RIf+vo0/Dq/lmnxQMpiCf3lCflLgdpOOL+4rmv4XbytUJxcrpCVx4HQC0zF3r+DBRL5fvWxDuJeeBzRqTF7hdJ9UB2M2iBye+4XlIK+A7mtodJwHdEGynREalBu3ZnARz3b0gypjpz/Nx7is2BGceAbG+PJMC3RH64AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <ui:LogMessage DisplayName="Log Invoice Date" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[InvoiceDate]" />
+                        <uix:NGetText DisplayName="Get Company Name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="415523af-1ff6-4f88-adca-3ebf238f83f9" TextString="[InvoiceCoName]" Version="V4">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable CVScreenId="e29b4c07-a821-4a0b-b673-80304380ef53" ContentHash="RwJEuONcVUOyQE6byKxgTw" CvType="AnyWordGroup" DesignTimeRectangle="583, 391, 32, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='*' role='text' idx='13' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl role='text' automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="61c30310-5fa3-4b81-aae0-34197ee36564" ImageBase64="" InformativeScreenshot="d17febf095b084e8b1bae44923a939d2.png" Reference="IsmE3_yZvkaypYNeDcsC5g/eneJZNylpkaW01NrohSd7g" ScopeSelectorArgument="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' title='Invoice 1.pdf - Adobe Acrobat Reader (64-bit)' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="e29b4c07-a821-4a0b-b673-80304380ef53" CvTextArea="581, 373, 43, 12" CvTextArgument="Bill To:" CvType="Text" DesignTimeRectangle="583, 375, 40, 12" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl name='Bill To:  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' matching:title='fuzzy' fuzzylevel:title='0.0' /&gt;&lt;ctrl name='Bill To:  ' role='text' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Bill To:' /&gt;" Guid="4c685830-7881-40df-a31d-85f5034077cf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAQCAYAAABtPJ3XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFsSURBVEhL7ZO/aoRAEMb3NfYdrrsXsLJJfa2FTYr0gk+QQvANBEnKsC8Q8AEC9mJ3hQhHCEEsjiuWL7Ou/z3vJCDkwn0wyCzjzI/ZbxluTP8XWGYCNn+AF38DRQSHMzDGYQYJ5Div/1lDGlgmCExOA9XQLrjl4z0tdEkfWOVpALMHOM61jkiD3aRvE9yJoLsvV7fhBtoMkEqJMvZhqMZVXtf0tAxY0mU8w40+u/7cRVRIqg/x+IvbuAJs0rDs7JUvA6bzQ45DVTAEhvxCfjjRN0ccOno5KgwXor5VlB/wjC1ssW97ToGbHykGlrgCOAfcagxc6YRMPIGz2mpyD2FvuppFwLUFtGcJvMnXAJ6cNZ7fwlE2OqNZ4DZnOwTp8a8Dk4eTEBZtmNsCGfVaBXgM2FjC8BGXVDNriXabnX8Z28DyBOKcHkb76FRQ87fXy/l4O+P+gy33Hx2H4bzomUoXPXwjugOvrTvwugJ+ALgEijIoq+seAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <ui:LogMessage DisplayName="Log Company Name" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[InvoiceCoName]" />
+                        <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_InvoiceTotal]" DisplayName="Extract Total Amount" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='DESCRIPTION' ReferenceIdx='0' Name='DESCRIPTION' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='AMOUNT (USD)' ReferenceIdx='1' Name='AMOUNT (USD)'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NExtractData_2" InteractionMode="WindowMessages" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="415523af-1ff6-4f88-adca-3ebf238f83f9" Version="V4">
+                          <uix:NExtractData.Target>
+                            <uix:TargetAnchorable ContentHash="JlQnsDNAXE63ZZjtvgMYQw" DesignTimeRectangle="592, 528, 510, 110" DesignTimeScaleFactor="1" ElementType="Table" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='table' idx='3' /&gt;" Guid="4f27af90-5b27-4849-8213-20b963aeef32" InformativeScreenshot="1a71284acdf3e844eaaadf3d06efa6d1.png" Reference="IsmE3_yZvkaypYNeDcsC5g/21Y8a7NqT0aHFNu1ncMREQ" ScopeSelectorArgument="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' title='Invoice 1.pdf - Adobe Acrobat Reader (64-bit)' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
+                          </uix:NExtractData.Target>
+                        </uix:NExtractData>
+                        <Assign DisplayName="Assign Invoice Total Amount" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[InvoiceTotalAmt]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[dt_InvoiceTotal.Rows(2).Item(0).ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Total Amount" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[InvoiceTotalAmt]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="-8, -8, 1936, 1056" Arguments="[CurrentFile.FullName]" ContentHash="V98BPMAMyEax65bCdUM2Gg" FilePath="C:\Program Files\Adobe\Acrobat DC\Acrobat\acrobat.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPSURBVFhH1ZY9aBRBFMevUVCUKIliOPHjEPzIkTRiOAWxSBobLawU7MQ2aBdFBBHkIHiFVjYhcGijyNkIKS5dIHCQSs6rQgq90mZvd7Z5vv9bNu7ODHGyN5xY/Jh9b96895+Zt8uWiOifYjjisdIRZo2hIdhiFvTcNgwHL1yLz45vD1a/UhAEe+fnD4oWH/2KJ/YFkos3pNfIYjh4AYUfP9iT74HBxjrFE/sHnG9zNxGGAwJsCYvgIsJw+BQA/iYiZwBXAdHrV0nDTR6k4HvXGpOSiJCeeK7XyxnAVYCaqVD4fkVERIuPrTFZwjdL2xy7pdfLGcBVQDx1SkZ15RKp+3eMeQN+O5Bbr5czgPMJzNcobNQlKU7CFqPjVUD47i3FJw6QOnfcOm/DqwA0HmJdmjDFqwA0nrp7m9TVaVK35qwxOl4FqDPjcvdhe5Xi8iFS5yelMePyYSmk5rhHvnzKrfEiIHr5TJLL/d+8TqpyLCl48eSfq+BRTma6kls7lAB8eNTpo0nR2SlS12bkGvAm4BSihYeJKBRm0BvqxuVcjsIC5K65MHYWvXiadL6t8TCP3nhwTwTr84UFwBc94cT8wcEzXkE9xoXCAnAC8GPntp25UliAL/5/AdVqVajX6zt2rVajVqtlzNnwIqDf78uY2r1eT0Skvt3wIgAFswLSMQWnkV2TxYsA7LbZbO7YnU5ntCeg2yjebrdHI2BYnAXgJ9KWYBjkx9RRwGd1odwddL9ZExUBuZCTcy/r9XJGCgc2oNYzDVstwzFqrM7RQaXfNljUiwb3UnIAAAAASUVORK5CYII=" InformativeScreenshot="3c0a43e85bf9ee1387a8680466b79e2c.png" Reference="IsmE3_yZvkaypYNeDcsC5g/MmTttx7qRE2ETlWpDE8rzA" Selector="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' title='*Adobe*' /&gt;" Version="V2" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+                <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[FileSuccessDestination]" DisplayName="Move Invoice To Success Folder" sap:VirtualizedContainerService.HintSize="502,191" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="True" Path="[CurrentFile.FullName]" />
+                <ui:ClearDataTable DataTable="[dt_Results]" DisplayName="Clear dt_Results Data Table Success " sap:VirtualizedContainerService.HintSize="502,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_4" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{InvoiceNumber, InvoiceDate, InvoiceCoName, InvoiceTotalAmt, CurrentFile.Name, &quot;Success&quot;}]" DataTable="[dt_Results]" DisplayName="Add Data Row to dt_Results Success" sap:VirtualizedContainerService.HintSize="502,218" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[dt_Results]" DisplayName="Append Row Success" sap:VirtualizedContainerService.HintSize="502,139" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="Sheet1" WorkbookPath="ScrapedInvoiceOutput.xlsx" />
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,720" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[FileFailedDestination]" DisplayName="Move Invoice To Failed Folder" sap:VirtualizedContainerService.HintSize="502,191" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[CurrentFile.FullName]" />
+                    <ui:ClearDataTable DataTable="[dt_Results]" DisplayName="Clear dt_Results Data Table Failed" sap:VirtualizedContainerService.HintSize="502,112" sap2010:WorkflowViewState.IdRef="ClearDataTable_5" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{InvoiceNumber, InvoiceDate, InvoiceCoName, InvoiceTotalAmt, CurrentFile.Name, &quot;Fail&quot;, exception.Message}]" DataTable="[dt_Results]" DisplayName="Add Data Row to dt_Results Failed" sap:VirtualizedContainerService.HintSize="502,218" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                    <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[dt_Results]" DisplayName="Append Ror Failed" sap:VirtualizedContainerService.HintSize="502,139" sap2010:WorkflowViewState.IdRef="AppendRange_5" SheetName="Sheet1" WorkbookPath="ScrapedInvoiceOutput.xlsx" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+            <TryCatch.Finally>
+              <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="536,25" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </TryCatch.Finally>
+          </TryCatch>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachFileX>
+  </Sequence>
+</Activity>
