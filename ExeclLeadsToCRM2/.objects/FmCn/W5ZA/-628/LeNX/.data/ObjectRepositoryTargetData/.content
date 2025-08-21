@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3mdV6Cly20qHX4hjCUgELg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="87431605-8237-403f-87e5-691f11c860b8" CvElementArea="899, 599, 18, 17" CvType="RadioButton" DesignTimeRectangle="902, 601, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' value='female' /&gt;" Guid="44dfdd1f-d034-4fdc-ad7a-51aad7ce9c53" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0f4597c56917f228c492169c57cf6549.png" xmlns="">00pYa5iXg60iNTF53wFLPEA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

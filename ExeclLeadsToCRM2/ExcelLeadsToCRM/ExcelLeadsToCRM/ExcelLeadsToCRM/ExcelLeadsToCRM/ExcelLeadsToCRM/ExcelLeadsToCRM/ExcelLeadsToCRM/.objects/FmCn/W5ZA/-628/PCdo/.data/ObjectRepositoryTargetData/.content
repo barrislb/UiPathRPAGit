@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XGdgqv__fk2esjGb_5vZpg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="6a5b0b30-5c6b-400d-81e0-e72dd33084b1" CvElementArea="849, 599, 17, 17" CvType="RadioButton" DesignTimeRectangle="851, 601, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' value='male' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='radio' value='male' class='' aaname='' matching:value='fuzzy' fuzzylevel:value='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="666db73b-1849-4d20-b0dd-0c1147cf81b6" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9044de7919a77654d27d260e78974159.png" xmlns="">0HX2Rvh5sBkGuYFHXBrOAfg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

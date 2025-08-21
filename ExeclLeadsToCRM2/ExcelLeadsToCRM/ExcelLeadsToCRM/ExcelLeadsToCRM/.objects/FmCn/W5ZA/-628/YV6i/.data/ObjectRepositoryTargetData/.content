@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vUrujnzHi0ag8O1pNeSkvQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/customer-success.html" CVScreenId="6931dbec-b46b-49af-92c0-5470912a425b" CvTextArea="1597, 114, 57, 16" CvTextArgument="Sign Out" CvType="Text" DesignTimeRectangle="1598, 96, 55, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl class='nav-link' tag='A' aaname='Sign Out' /&gt;" Guid="49b5c6a7-eb63-42b0-81d3-1c77a4f6bbde" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="384a8f7b573dbcf339dc4c0a9ebaa7ce.png" xmlns="">0gCJBvaFm90Wm6U7B5136CQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

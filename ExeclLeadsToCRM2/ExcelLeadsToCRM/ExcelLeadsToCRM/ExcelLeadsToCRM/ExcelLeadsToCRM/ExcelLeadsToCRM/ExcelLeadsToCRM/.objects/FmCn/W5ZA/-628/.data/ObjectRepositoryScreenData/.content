@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="k5OhOa3Fjk2L-PXpm52xiw" Reference="TGdgpPk2v0uS97xnHqOFzQ/-628LzmDTEGxWzCNGJM5kQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="7tjWLOSaEEaQiHtXQJD87Q" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG4SURBVDhPpZHLK0RRHMf9E0pZWFhZWHikJBulSbKwQsqGlIWFhZUQwoayEDaamTQ0TWNMGa9oRhoxc/NYMN7mzsOYYYxxu43X9XXPMY47MZP41rd7z+P7+Z3zO2kcx+E/pgClhq17OApGEBZjeJXe4rM/KwHg4INYP/MjvUONslEzcgZm0Glx0LVkYoA3uVD+kIGGlW4z2eGNCPHt35Vwgu5FJw01621YO/Ehs0tLx6rxebr+kxhgyeVhVXuXOfB3ArJ6ppDdp6P9UMp2JWLsIILok/QFuBMfod52IaNTw0Cfthx6MH0axeTRPQVULfmQa7iE8UJIvIJHrkoCBfFe1GpXMGLbhyss0gBx3doV+y8184kAIicfwosk0eaRPoRiryAPWWRy01CDNQDNcRRmt4CJw8h3gFJW/0flErlSntGNuUuB3r1y0YfiOR41q/7UAOPFAzuuTu5B03qAjT+dEkDUthlEucULw/kX7FeAgPiC9q0QCmfd6HLeoNUeZKHqZT/0MpBcIynAEYqxwOBuGI2K4w/IY9LYevlFkgKEZ4l2u2LBi5aNa/Tv3DIAsUqeJ18G+Ls5vANONlbvQx8SxAAAAABJRU5ErkJggg==" Reference="TGdgpPk2v0uS97xnHqOFzQ/-628LzmDTEGxWzCNGJM5kQ" Selector="&lt;html app='chrome.exe' title='Customer Service' /&gt;" Url="[CrmUrl]" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="75fdd949f01653dab66e5cabb5aff569.jpg" xmlns="">0vm9fJvEIV0iOseJPSPxDWA</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="CrmUrl" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
