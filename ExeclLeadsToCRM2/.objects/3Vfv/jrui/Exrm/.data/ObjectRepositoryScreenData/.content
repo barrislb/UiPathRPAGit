@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="RNCZup7Zs0-6X6vc_yqhTQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" Selector="&lt;html app='chrome.exe' title='Customers' /&gt;" Url="automationplayground.com/crm/customer-success.html" />
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

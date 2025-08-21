@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CreateCustomer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateCustomer" this:CreateCustomer.LongTimout="0" this:CreateCustomer.MediumTimout="0" this:CreateCustomer.ShortTimeout="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="StatesDetails" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="LongTimout" Type="InArgument(x:Int32)" />
@@ -11,6 +11,9 @@
     <x:Property Name="SuccesRowCount" Type="InOutArgument(x:Int32)" />
     <x:Property Name="CustCreateSuccesMsg" Type="InOutArgument(x:String)" />
   </x:Members>
+  <this:CreateCustomer.SuccesRowCount>
+    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+  </this:CreateCustomer.SuccesRowCount>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,29 +134,37 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automate Customers To CRM Process" sap:VirtualizedContainerService.HintSize="1090,5215" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Automate Customers To CRM Process" sap:VirtualizedContainerService.HintSize="1090,1194" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Automate CRM" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="582,5192" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[TheBrowser]" InteractionMode="Simulate" ScopeGuid="162b50c3-1492-4598-a3f3-679bc2af4f24" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Automate CRM" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="546,1171" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[TheBrowser]" InteractionMode="Simulate" ScopeGuid="162b50c3-1492-4598-a3f3-679bc2af4f24" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Automate Customers To CRM" sap:VirtualizedContainerService.HintSize="548,5031" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence DisplayName="Automate Leads to CRM" sap:VirtualizedContainerService.HintSize="512,1010" sap2010:WorkflowViewState.IdRef="Sequence_35">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Int32" Default="0" Name="CustSuccessRowCount" />
-              <Variable x:TypeArguments="x:Int32" Default="0" Name="CustFailureRowCount" />
+              <Variable x:TypeArguments="x:Int32" Name="CustSuccessRowCount">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:Int32" Name="CustFailureRowCount">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" />
+                </Variable.Default>
+              </Variable>
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Filter customers by &quot;Result&quot; column. Retrieve all rows in Customers DataTable variable where the &quot;Result&quot; column contains the value &quot;Success&quot; and &quot;Failure&quot; using LINQ." DisplayName="Initialize Customers Success and Failure Data Tables" sap:VirtualizedContainerService.HintSize="514,334" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Filter customers by &quot;Result&quot; column. Retrieve all rows in Customers DataTable variable where the &quot;Result&quot; column contains the value &quot;Success&quot; and &quot;Failure&quot; using LINQ." DisplayName="Initialize Customers Success and Failure Data Tables" sap:VirtualizedContainerService.HintSize="478,334" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -204,15 +215,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <ui:ReportStatus DisplayName="Reporting Feedback Indicating Succesfull and Invalid Customers " sap:VirtualizedContainerService.HintSize="514,123" sap2010:WorkflowViewState.IdRef="ReportStatus_7" StatusText="[&quot;There are &quot; + CustFailureRowCount.ToString + &quot; customers that have invalid email addresses. Please update customers in the Leads.xlsx file with correct email addresses.&quot; + vbNewLine + vbNewLine + &quot;There are &quot; + CustSuccessRowCount.ToString + &quot; customers with successful email addresses that will be added as new contacts in the CRM.&quot; + vbNewLine + &quot;Beginning to enter new customer info...&quot;]" />
-            <ui:LogMessage DisplayName="Reporting Feedback Indicationg Successful and Invalid Customers" sap:VirtualizedContainerService.HintSize="514,177" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;There are&quot; + CustSuccessRowCount.ToString + &quot; customers with successful email addresses will be added as new contacts in the CRM.&quot; + vbNewLine + &quot;There are &quot; + CustFailureRowCount.ToString + &quot; customers with invalid email addresses that will not be added to the CRM.&quot;]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CustomerEmailSuccess]" DisplayName="Process All Valid Customers to CRM" sap:VirtualizedContainerService.HintSize="514,4335" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ReportStatus DisplayName="Reporting Feedback Indicating Succesfull and Invalid Customers " sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="ReportStatus_7" StatusText="[&quot;There are &quot; + CustFailureRowCount.ToString + &quot; customers that have invalid email addresses. Please update customers in the Leads.xlsx file with correct email addresses.&quot; + vbNewLine + vbNewLine + &quot;There are &quot; + CustSuccessRowCount.ToString + &quot; customers with successful email addresses that will be added as new contacts in the CRM.&quot; + vbNewLine + &quot;Beginning to enter new customer info...&quot;]" />
+            <ui:LogMessage DisplayName="Reporting Feedback Indicationg Successful and Invalid Customers" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;There are&quot; + CustSuccessRowCount.ToString + &quot; customers with successful email addresses will be added as new contacts in the CRM.&quot; + vbNewLine + &quot;There are &quot; + CustFailureRowCount.ToString + &quot; customers with invalid email addresses that will not be added to the CRM.&quot;]" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CustomerEmailSuccess]" DisplayName="Process All Valid Leads to CRM" sap:VirtualizedContainerService.HintSize="478,314" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CrmCustomer" />
                   </ActivityAction.Argument>
-                  <Sequence sap2010:Annotation.AnnotationText="Only add customers with vailed (Success) email addresses to CRM." DisplayName="Process Each Customer" sap:VirtualizedContainerService.HintSize="512,4160" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence sap2010:Annotation.AnnotationText="Only add customers with vailed (Success) email addresses to CRM." DisplayName="Save Current Lead" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="FirstName" />
                       <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -226,361 +237,478 @@
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Initialize Customer Variables" sap:VirtualizedContainerService.HintSize="478,335" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("First Name").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[LastName]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("Last Name").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[EmailAddress]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("Email Address").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("City").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[State]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[StatesDetails(CrmCustomer("State").ToString)]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[Gender]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("Gender").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[Promo]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[CrmCustomer("Promo").ToString]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="New Customer" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,227" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/customers.html" CVScreenId="415d4acb-a6b1-40f9-9e06-e1c868d8d389" ContentHash="07S-fTJlh0yHjbsHflnV8g" CvElementArea="412, 225, 122, 32" CvTextArea="425, 235, 95, 13" CvTextArgument="New Customer" CvType="Button" DesignTimeRectangle="413, 227, 119, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aaname='New Customer' /&gt;" Guid="7835755c-f0bf-4bf8-9e40-2f6a8dfa705b" InformativeScreenshot="1508e90db23c89c1900d9127828968d8.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/AKKSU-qJp0eCYPsv08moPA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                      </uix:NClick.Target>
-                      <uix:NClick.VerifyOptions>
-                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionOptions.Retry>
-                          <uix:VerifyExecutionOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionOptions.Timeout>
-                        </uix:VerifyExecutionOptions>
-                      </uix:NClick.VerifyOptions>
-                    </uix:NClick>
-                    <ui:ReportStatus DisplayName="Row Currently Being Processed! " sap:VirtualizedContainerService.HintSize="478,123" sap2010:WorkflowViewState.IdRef="ReportStatus_8" StatusText="[&quot;Row: &quot; + SuccesRowCount.ToString + &quot; of &quot; + CustSuccessRowCount.ToString + &quot; is being processed.&quot;]" />
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Email Address" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,288" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[EmailAddress]" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="8e2ba4dc-1d61-4760-959f-f0c60d006e5a" ContentHash="KjsoFb6yU0GubbZYd_Qcvw" CvElementArea="791, 254, 353, 36" CvType="InputBox" DesignTimeRectangle="793, 255, 350, 34" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='EmailAddress' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='EmailAddress' tag='INPUT' type='email' class='form-control' placeholder='Enter email' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d4438c14-4b10-4d61-8bdf-d3d5bc4eee6a" InformativeScreenshot="94df88fb3fa099214832b40735f139c8.png" IsResponsive="True" Reference="TGdgpPk2v0uS97xnHqOFzQ/SQdLEtKqeUmDqkH00gMH7w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="8e2ba4dc-1d61-4760-959f-f0c60d006e5a" CvTextArea="792, 233, 39, 13" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="793, 230, 37, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Email' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Email' /&gt;" Guid="5ef610d2-cb8b-4392-bf45-1d70708ad508" SearchSteps="Selector, FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="First Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,288" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[FirstName]" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="013c4884-64bc-4afc-8437-4146013c543c" ContentHash="3_4SezpQpEytJB1cZcMChg" CvElementArea="792, 328, 351, 36" CvType="InputBox" DesignTimeRectangle="793, 329, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='FirstName' tag='INPUT' type='text' class='form-control' placeholder='Enter first name' aaname='First Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="40d7a464-6e2c-41f7-8c5c-de145a9498d0" InformativeScreenshot="064bd884cfc0e09ae02d58266e4302cc.png" IsResponsive="True" Reference="TGdgpPk2v0uS97xnHqOFzQ/aE7C52JThkutSCT_Z9HZkg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="013c4884-64bc-4afc-8437-4146013c543c" CvTextArea="792, 307, 73, 13" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="793, 304, 72, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='First Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='First Name' /&gt;" Guid="bbcfe180-ae69-461e-92bb-b33de084f23c" SearchSteps="Selector, FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Last Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,288" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[LastName]" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="cd3160cb-3a16-48c0-a5c8-7ae7107cbcfe" ContentHash="l2wD3Cq-N0GsJnJbecC_kw" CvElementArea="792, 402, 352, 36" CvType="InputBox" DesignTimeRectangle="793, 403, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='LastName' tag='INPUT' type='text' class='form-control' placeholder='Enter last name' aaname='Last Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d8ccb63f-5e78-4cc1-b7b7-029faae1310c" InformativeScreenshot="924010e8307a6fa916a7677fe2ab0cc1.png" IsResponsive="True" Reference="TGdgpPk2v0uS97xnHqOFzQ/HmZAa--8VUuUm_Likj2LOQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="cd3160cb-3a16-48c0-a5c8-7ae7107cbcfe" CvTextArea="792, 381, 72, 13" CvTextArgument="Last Name" CvType="Text" DesignTimeRectangle="793, 378, 71, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Last Name' /&gt;" Guid="35eaee84-2995-4467-bc65-b906d61c9868" SearchSteps="Selector, FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="CIty" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,288" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[City]" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="a54faf56-9c11-4bc1-aa86-92a84f22d90d" ContentHash="_EMuKLW88U-JN6rCbBKUbQ" CvElementArea="792, 476, 352, 36" CvType="InputBox" DesignTimeRectangle="793, 477, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='City' tag='INPUT' type='text' class='form-control' placeholder='Enter city' aaname='City' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d3174f3c-9404-4f5b-9deb-14a61b13ab05" InformativeScreenshot="23df1b0a46dce6351420e2bc4b1fd6f8.png" IsResponsive="True" Reference="TGdgpPk2v0uS97xnHqOFzQ/PpyCHFg5VkW4pre366mrmw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="a54faf56-9c11-4bc1-aa86-92a84f22d90d" CvTextArea="792, 455, 28, 16" CvTextArgument="City" CvType="Text" DesignTimeRectangle="793, 452, 26, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='City' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='City' type='' class='form-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='City' /&gt;" Guid="94319fdd-4570-470d-a07b-cab2f72149c2" SearchSteps="Selector, FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                      <uix:NTypeInto.VerifyOptions>
-                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionTypeIntoOptions.Retry>
-                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                        </uix:VerifyExecutionTypeIntoOptions>
-                      </uix:NTypeInto.VerifyOptions>
-                    </uix:NTypeInto>
-                    <uix:NSelectItem DisplayName="Select State" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,190" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[State]" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NSelectItem.Items>
-                        <scg:List x:TypeArguments="x:String" Capacity="50">
-                          <x:String>N/A</x:String>
-                          <x:String>Alaska</x:String>
-                          <x:String>Alabama</x:String>
-                          <x:String>Arkansas</x:String>
-                          <x:String>Arizona</x:String>
-                          <x:String>California</x:String>
-                          <x:String>Colorado</x:String>
-                          <x:String>Connecticut</x:String>
-                          <x:String>District of Columbia</x:String>
-                          <x:String>Delaware</x:String>
-                          <x:String>Florida</x:String>
-                          <x:String>Georgia</x:String>
-                          <x:String>Hawaii</x:String>
-                          <x:String>Iowa</x:String>
-                          <x:String>Idaho</x:String>
-                          <x:String>Illinois</x:String>
-                          <x:String>Indiana</x:String>
-                          <x:String>Kansas</x:String>
-                          <x:String>Kentucky</x:String>
-                          <x:String>Louisiana</x:String>
-                          <x:String>Massachusetts</x:String>
-                          <x:String>Maryland</x:String>
-                          <x:String>Maine</x:String>
-                          <x:String>Michigan</x:String>
-                          <x:String>Minnesota</x:String>
-                          <x:String>Missouri</x:String>
-                          <x:String>Mississippi</x:String>
-                          <x:String>Montana</x:String>
-                          <x:String>North Carolina</x:String>
-                          <x:String>North Dakota</x:String>
-                          <x:String>Nebraska</x:String>
-                          <x:String>New Hampshire</x:String>
-                          <x:String>New Jersey</x:String>
-                          <x:String>New Mexico</x:String>
-                          <x:String>Nevada</x:String>
-                          <x:String>New York</x:String>
-                          <x:String>Ohio</x:String>
-                          <x:String>Oklahoma</x:String>
-                          <x:String>Oregon</x:String>
-                          <x:String>Pennsylvania</x:String>
-                          <x:String>Puerto Rico</x:String>
-                          <x:String>Rhode Island</x:String>
-                          <x:String>South Carolina</x:String>
-                          <x:String>South Dakota</x:String>
-                          <x:String>Tennessee</x:String>
-                          <x:String>Texas</x:String>
-                          <x:String>Utah</x:String>
-                          <x:String>Virginia</x:String>
-                          <x:String>Vermont</x:String>
-                          <x:String>Washington</x:String>
-                        </scg:List>
-                      </uix:NSelectItem.Items>
-                      <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="6a182474-ba1c-45b0-873e-58b23e599562" ContentHash="SH7SHW1_s0Wu4tezpgaC3Q" CvElementArea="792, 549, 351, 35" CvType="InputBox" DesignTimeRectangle="793, 551, 350, 31" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='StateOrRegion' tag='SELECT' type='' class='form-select form-select-lg mb-3' aaname='State' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9353885a-065c-4ae3-bb4b-2916c75958c7" InformativeScreenshot="2b8b05ed80f56aa594c9b87b1901fe0f.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/HbT48mRZUkCcybsYqEeDRQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="6a182474-ba1c-45b0-873e-58b23e599562" CvTextArea="793, 529, 35, 13" CvTextArgument="State" CvType="Text" DesignTimeRectangle="793, 526, 34, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='State' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='State' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='State' /&gt;" Guid="e9a8eab6-d1ff-41bf-a89d-4a43bca6ca8d" SearchSteps="Selector, FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NSelectItem.Target>
-                    </uix:NSelectItem>
-                    <If Condition="[Gender.Contains(&quot;M&quot;)]" DisplayName="If Gender Male or Female" sap:VirtualizedContainerService.HintSize="478,621" sap2010:WorkflowViewState.IdRef="If_3">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheck Action="Check" DisplayName="Male" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                            <uix:NCheck.Target>
-                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="6e5a4544-ff70-4bbd-aa87-d1f81dd35877" ContentHash="paUcQmY_9EiEbvPzNKjpBQ" DesignTimeRectangle="851, 601, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' /&gt;" Guid="a6fe55ea-59db-4896-9efc-73734f465d8d" InformativeScreenshot="7c364267322c855997632ade1b001181.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/DkYHlz2uLEmz4C3Y-Fv_0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                            </uix:NCheck.Target>
-                          </uix:NCheck>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheck Action="Check" DisplayName="Female" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                            <uix:NCheck.Target>
-                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="7a52e79a-8737-4861-b7a0-89b746e72015" ContentHash="NuCjc9PCcUOa6psPLJT9qA" DesignTimeRectangle="902, 653, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' value='female' /&gt;" Guid="f273648b-dfa8-47e3-93d5-ede4912ae556" InformativeScreenshot="735f0390e49d64fdd8e349a845717c56.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/RjUQLvB-l0W3a7_YTsqgEA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                            </uix:NCheck.Target>
-                          </uix:NCheck>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <If Condition="[Promo.Contains(&quot;Y&quot;)]" DisplayName="Add Promotional List" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_2">
+                    <TryCatch DisplayName="Try To Save The Current Lead" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <TryCatch.Try>
+                        <Sequence DisplayName="Save Lead" sap:VirtualizedContainerService.HintSize="450,735" sap2010:WorkflowViewState.IdRef="Sequence_36">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheck Action="Check" DisplayName="Select Promo" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                            <uix:NCheck.Target>
-                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="a88f26eb-8a54-40b5-8eac-db8ce9392be1" ContentHash="TeuDnZpU6k6SR8zu--p51g" CvElementArea="792, 637, 16, 16" CvType="CheckBox" DesignTimeRectangle="793, 638, 13, 13" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" Guid="63aca249-5701-49b5-9e97-5819c0cbd72b" InformativeScreenshot="bed69b0c31363c9d5e17156a00069956.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/v1bbpJnNp0CA-F05FX1KPg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                            </uix:NCheck.Target>
-                          </uix:NCheck>
+                          <ui:MultipleAssign DisplayName="Initialize Customer Variables" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("First Name").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[LastName]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("Last Name").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[EmailAddress]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("Email Address").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("City").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[State]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[StatesDetails(CrmCustomer("State").ToString)]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[Gender]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("Gender").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[Promo]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[CrmCustomer("Promo").ToString]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MultipleAssign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="New Customer" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/customers.html" CVScreenId="415d4acb-a6b1-40f9-9e06-e1c868d8d389" CvElementArea="412, 225, 122, 32" CvTextArea="425, 235, 95, 13" CvTextArgument="New Customer" CvType="Button" DesignTimeRectangle="413, 227, 119, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aaname='New Customer' /&gt;" Guid="7835755c-f0bf-4bf8-9e40-2f6a8dfa705b" InformativeScreenshot="1508e90db23c89c1900d9127828968d8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <ui:ReportStatus DisplayName="Row Currently Being Processed! " sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="ReportStatus_8" StatusText="[&quot;Row: &quot; + SuccesRowCount.ToString + &quot; of &quot; + CustSuccessRowCount.ToString + &quot; is being processed.&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ReportStatus>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Email Address" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[EmailAddress]" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="8e2ba4dc-1d61-4760-959f-f0c60d006e5a" CvElementArea="791, 254, 353, 36" CvType="InputBox" DesignTimeRectangle="793, 255, 350, 34" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='EmailAddress' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='EmailAddress' tag='INPUT' type='email' class='form-control' placeholder='Enter email' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d4438c14-4b10-4d61-8bdf-d3d5bc4eee6a" InformativeScreenshot="94df88fb3fa099214832b40735f139c8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="8e2ba4dc-1d61-4760-959f-f0c60d006e5a" CvTextArea="792, 233, 39, 13" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="793, 230, 37, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Email' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Email' /&gt;" Guid="5ef610d2-cb8b-4392-bf45-1d70708ad508" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="First Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[FirstName]" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="013c4884-64bc-4afc-8437-4146013c543c" CvElementArea="792, 328, 351, 36" CvType="InputBox" DesignTimeRectangle="793, 329, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='FirstName' tag='INPUT' type='text' class='form-control' placeholder='Enter first name' aaname='First Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="40d7a464-6e2c-41f7-8c5c-de145a9498d0" InformativeScreenshot="064bd884cfc0e09ae02d58266e4302cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="013c4884-64bc-4afc-8437-4146013c543c" CvTextArea="792, 307, 73, 13" CvTextArgument="First Name" CvType="Text" DesignTimeRectangle="793, 304, 72, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='First Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First Name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='First Name' /&gt;" Guid="bbcfe180-ae69-461e-92bb-b33de084f23c" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Last Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[LastName]" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="cd3160cb-3a16-48c0-a5c8-7ae7107cbcfe" CvElementArea="792, 402, 352, 36" CvType="InputBox" DesignTimeRectangle="793, 403, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='LastName' tag='INPUT' type='text' class='form-control' placeholder='Enter last name' aaname='Last Name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d8ccb63f-5e78-4cc1-b7b7-029faae1310c" InformativeScreenshot="924010e8307a6fa916a7677fe2ab0cc1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="cd3160cb-3a16-48c0-a5c8-7ae7107cbcfe" CvTextArea="792, 381, 72, 13" CvTextArgument="Last Name" CvType="Text" DesignTimeRectangle="793, 378, 71, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Last Name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Last Name' /&gt;" Guid="35eaee84-2995-4467-bc65-b906d61c9868" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="CIty" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="Simulate" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Text="[City]" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="a54faf56-9c11-4bc1-aa86-92a84f22d90d" CvElementArea="792, 476, 352, 36" CvType="InputBox" DesignTimeRectangle="793, 477, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='City' tag='INPUT' type='text' class='form-control' placeholder='Enter city' aaname='City' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d3174f3c-9404-4f5b-9deb-14a61b13ab05" InformativeScreenshot="23df1b0a46dce6351420e2bc4b1fd6f8.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="a54faf56-9c11-4bc1-aa86-92a84f22d90d" CvTextArea="792, 455, 28, 16" CvTextArgument="City" CvType="Text" DesignTimeRectangle="793, 452, 26, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='City' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='City' type='' class='form-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='City' /&gt;" Guid="94319fdd-4570-470d-a07b-cab2f72149c2" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NTypeInto>
+                          <uix:NSelectItem DisplayName="Select State" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[State]" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="50">
+                                <x:String>N/A</x:String>
+                                <x:String>Alaska</x:String>
+                                <x:String>Alabama</x:String>
+                                <x:String>Arkansas</x:String>
+                                <x:String>Arizona</x:String>
+                                <x:String>California</x:String>
+                                <x:String>Colorado</x:String>
+                                <x:String>Connecticut</x:String>
+                                <x:String>District of Columbia</x:String>
+                                <x:String>Delaware</x:String>
+                                <x:String>Florida</x:String>
+                                <x:String>Georgia</x:String>
+                                <x:String>Hawaii</x:String>
+                                <x:String>Iowa</x:String>
+                                <x:String>Idaho</x:String>
+                                <x:String>Illinois</x:String>
+                                <x:String>Indiana</x:String>
+                                <x:String>Kansas</x:String>
+                                <x:String>Kentucky</x:String>
+                                <x:String>Louisiana</x:String>
+                                <x:String>Massachusetts</x:String>
+                                <x:String>Maryland</x:String>
+                                <x:String>Maine</x:String>
+                                <x:String>Michigan</x:String>
+                                <x:String>Minnesota</x:String>
+                                <x:String>Missouri</x:String>
+                                <x:String>Mississippi</x:String>
+                                <x:String>Montana</x:String>
+                                <x:String>North Carolina</x:String>
+                                <x:String>North Dakota</x:String>
+                                <x:String>Nebraska</x:String>
+                                <x:String>New Hampshire</x:String>
+                                <x:String>New Jersey</x:String>
+                                <x:String>New Mexico</x:String>
+                                <x:String>Nevada</x:String>
+                                <x:String>New York</x:String>
+                                <x:String>Ohio</x:String>
+                                <x:String>Oklahoma</x:String>
+                                <x:String>Oregon</x:String>
+                                <x:String>Pennsylvania</x:String>
+                                <x:String>Puerto Rico</x:String>
+                                <x:String>Rhode Island</x:String>
+                                <x:String>South Carolina</x:String>
+                                <x:String>South Dakota</x:String>
+                                <x:String>Tennessee</x:String>
+                                <x:String>Texas</x:String>
+                                <x:String>Utah</x:String>
+                                <x:String>Virginia</x:String>
+                                <x:String>Vermont</x:String>
+                                <x:String>Washington</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="6a182474-ba1c-45b0-873e-58b23e599562" CvElementArea="792, 549, 351, 35" CvType="InputBox" DesignTimeRectangle="793, 551, 350, 31" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='StateOrRegion' tag='SELECT' type='' class='form-select form-select-lg mb-3' aaname='State' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9353885a-065c-4ae3-bb4b-2916c75958c7" InformativeScreenshot="2b8b05ed80f56aa594c9b87b1901fe0f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="6a182474-ba1c-45b0-873e-58b23e599562" CvTextArea="793, 529, 35, 13" CvTextArgument="State" CvType="Text" DesignTimeRectangle="793, 526, 34, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='State' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='State' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='State' /&gt;" Guid="e9a8eab6-d1ff-41bf-a89d-4a43bca6ca8d" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NSelectItem.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NSelectItem>
+                          <If Condition="[Gender.Contains(&quot;M&quot;)]" DisplayName="If Gender Male or Female" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence DisplayName="Click Male Radio" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheck Action="Check" DisplayName="Male" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="6e5a4544-ff70-4bbd-aa87-d1f81dd35877" DesignTimeRectangle="851, 601, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' /&gt;" Guid="a6fe55ea-59db-4896-9efc-73734f465d8d" InformativeScreenshot="7c364267322c855997632ade1b001181.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Click Female Radio" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheck Action="Check" DisplayName="Female" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_4" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="7a52e79a-8737-4861-b7a0-89b746e72015" DesignTimeRectangle="902, 653, 13, 13" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' value='female' /&gt;" Guid="f273648b-dfa8-47e3-93d5-ede4912ae556" InformativeScreenshot="735f0390e49d64fdd8e349a845717c56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheck.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheck>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <If Condition="[Promo.Contains(&quot;Y&quot;)]" DisplayName="Add Promotional List" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence DisplayName="Check Promo Checkbox" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheck Action="Check" DisplayName="Select Promo" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                                  <uix:NCheck.Target>
+                                    <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="a88f26eb-8a54-40b5-8eac-db8ce9392be1" CvElementArea="792, 637, 16, 16" CvType="CheckBox" DesignTimeRectangle="793, 638, 13, 13" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" Guid="63aca249-5701-49b5-9e97-5819c0cbd72b" InformativeScreenshot="bed69b0c31363c9d5e17156a00069956.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheck.Target>
+                                </uix:NCheck>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Uccheck Promo Checkbox" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log - No Pormotional List Added!" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No Promo List added for cusotmer:  &quot; + FirstName + &quot; &quot; + LastName]" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit New Customer" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="da61f1ae-45e8-4cad-813b-ed98d7886990" CvElementArea="864, 670, 73, 36" CvTextArea="878, 681, 46, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="866, 671, 70, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Submit' /&gt;" Guid="ede748c1-724b-4e3d-9fc8-2b7a3e016c4b" InformativeScreenshot="0b33b927799ab28452555a033a04770d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NCheckState DisplayName="Verify Lead Saved!" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Success banner appears" sap:VirtualizedContainerService.HintSize="468,470" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ReportStatus DisplayName="Successfully Saved Customer!" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="ReportStatus_9" StatusText="[&quot;Successfully saved customer: &quot; + FirstName + &quot; &quot; + LastName]" />
+                                <ui:LogMessage DisplayName="Customer Saved Successfully!" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Successfully saved customer: &quot; + FirstName + &quot; &quot; + LastName]" />
+                                <Assign DisplayName="Get Current Row Count" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[SuccesRowCount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[SuccesRowCount + 1]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Success banner does not appear" sap:VirtualizedContainerService.HintSize="450,478" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ReportStatus DisplayName="Report Save Failure!" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="ReportStatus_10" StatusText="[&quot;Error saving for customer: &quot; + FirstName + &quot; &quot; + LastName]" />
+                                <ui:LogMessage DisplayName="Error - Saving Failure!" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Error saving for  customer: &quot; + FirstName + &quot; &quot; + LastName]" />
+                                <Throw DisplayName="Failed To Save Customer in CRM!" Exception="[New Exception(&quot;Success banner not found! Failed to create new customer &quot; + FirstName + &quot; &quot; + LastName +&quot; in CRM!&quot;)]" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/customer-success.html" CVScreenId="c53bd39c-759c-4757-8f42-ebb5a866425a" CvTextArea="428, 231, 202, 13" CvTextArgument="Success! New customer added." CvType="Text" DesignTimeRectangle="413, 219, 1110, 38" FullSelectorArgument="&lt;webctrl id='Success' tag='DIV' /&gt;" Guid="655f9afb-8986-4698-a6c4-fcd6baca0012" InformativeScreenshot="c10f88578de4f17cebca45664f453a40.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
                         </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Log and Report Failure" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Save Error!" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;An error occurred! &quot; + exception.Message + &quot; Failed to create new customer: &quot; + FirstName + &quot; &quot; + LastName]" />
+                              <Throw DisplayName="Error Saveing!" Exception="[New Exception(&quot;An error occurred! &quot; + exception.Message + &quot; Failed to create new customer: &quot; + FirstName + &quot; &quot; + LastName)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                      <TryCatch.Finally>
+                        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_37">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log - No Pormotional List Added!" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No Promo List added for cusotmer:  &quot; + FirstName + &quot; &quot; + LastName]" />
                         </Sequence>
-                      </If.Else>
-                    </If>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit New Customer" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,227" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="da61f1ae-45e8-4cad-813b-ed98d7886990" ContentHash="Kgv6dm0YPUC4Gwue78mYgA" CvElementArea="864, 670, 73, 36" CvTextArea="878, 681, 46, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="866, 671, 70, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Submit' /&gt;" Guid="ede748c1-724b-4e3d-9fc8-2b7a3e016c4b" InformativeScreenshot="0b33b927799ab28452555a033a04770d.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/-BkC97u4ik-do2jE8WQXYw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                      </uix:NClick.Target>
-                      <uix:NClick.VerifyOptions>
-                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionOptions.Retry>
-                          <uix:VerifyExecutionOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionOptions.Timeout>
-                        </uix:VerifyExecutionOptions>
-                      </uix:NClick.VerifyOptions>
-                    </uix:NClick>
-                    <uix:NGetText DisplayName="Success! New customer a…" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,190" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="162b50c3-1492-4598-a3f3-679bc2af4f24" TextString="[CustCreateSuccesMsg]" Timeout="[MediumTimout]" Version="V5">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="automationplayground.com/crm/customer-success.html" CVScreenId="68f9578f-fe7a-4129-8e03-067119b60654" ContentHash="e76zRxL0b0qKBiNZUj5UGQ" CvType="AnyWordGroup" DesignTimeRectangle="413, 167, 1110, 38" FullSelectorArgument="&lt;webctrl id='Success' tag='DIV' innertext='   Success! New customer added.        ×    ' /&gt;" Guid="6b67da68-c94a-4817-936e-36345e80c2e5" InformativeScreenshot="ce8c5ad3e47335ac069b196a74c21843.png" Reference="TGdgpPk2v0uS97xnHqOFzQ/0B-BAlIReEGWuOrF5UPwvA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-                      </uix:NGetText.Target>
-                    </uix:NGetText>
-                    <If Condition="[CustCreateSuccesMsg.Contains(&quot;Success&quot;)]" DisplayName="Throw Error If New Custmor Failed!" sap:VirtualizedContainerService.HintSize="478,947" sap2010:WorkflowViewState.IdRef="If_4">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,466" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:ReportStatus DisplayName="Successfully Created Customer!" sap:VirtualizedContainerService.HintSize="434,123" sap2010:WorkflowViewState.IdRef="ReportStatus_9" StatusText="[&quot;Successfully created new customer: &quot; + FirstName + &quot; &quot; + LastName]" />
-                          <ui:LogMessage DisplayName="Customer Created Successfully!" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Successfully created new customer: &quot; + FirstName + &quot; &quot; + LastName]" />
-                          <Assign DisplayName="Get Current Row Count" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_3">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[SuccesRowCount]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[SuccesRowCount + 1]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,351" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log The Error" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Failed to create new customer: &quot; + FirstName + &quot; &quot; + LastName]" />
-                          <Throw DisplayName="Failed To Create Customer in CRM!" Exception="[New Exception(&quot;Failed to create new customer &quot; + FirstName + &quot; &quot; + LastName +&quot; in CRM!&quot;)]" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Throw_4" />
-                        </Sequence>
-                      </If.Else>
-                    </If>
+                      </TryCatch.Finally>
+                    </TryCatch>
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
