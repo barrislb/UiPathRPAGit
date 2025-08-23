@@ -1,0 +1,14 @@
+﻿{
+  "Name": "New Lead",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "He0qGR_Q7Uiaez1D662jHg",
+  "Reference": "ssTzUD_YqEWVAnjaEpo5Kg/He0qGR_Q7Uiaez1D662jHg",
+  "ParentRef": "ssTzUD_YqEWVAnjaEpo5Kg/aNJh1sXmikCnsf1V2YdEQg",
+  "Created": "2025-08-22T15:48:45.5258831Z",
+  "Updated": "2025-08-22T15:48:45.5258831Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

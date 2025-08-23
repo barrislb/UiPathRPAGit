@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YoVjZYF9c0C56YfOvmQw6w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="9c1d013d-7936-4f9f-99e5-02d46c4d5d11" CvElementArea="864, 670, 73, 36" CvTextArea="878, 681, 46, 13" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="866, 671, 70, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Submit' /&gt;" Guid="78d18e26-d01e-4793-aeba-c9cb9d90428b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0b33b927799ab28452555a033a04770d.png" xmlns="">0jUo04qucI0yz7qiDf-yf7g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

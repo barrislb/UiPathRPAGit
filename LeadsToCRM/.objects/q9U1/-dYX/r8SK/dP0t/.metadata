@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Select Promo",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "dP0tI4DLUEeFX8JzIy4nJw",
+  "Reference": "ssTzUD_YqEWVAnjaEpo5Kg/dP0tI4DLUEeFX8JzIy4nJw",
+  "ParentRef": "ssTzUD_YqEWVAnjaEpo5Kg/r8SKh7rlvEaspRCVSJPRmg",
+  "Created": "2025-08-22T16:06:23.5742385Z",
+  "Updated": "2025-08-22T16:06:23.5742385Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="7cBAOFthIkyX_j_q9UQCVQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/login.html" CVScreenId="58e13795-bf8a-4a96-8fda-b04a028d433d" CvElementArea="792, 380, 351, 36" CvType="InputBox" DesignTimeRectangle="793, 381, 350, 34" ElementType="InputBoxPassword" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='form-control' placeholder='Password' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3ae064aa-e389-4d42-8a0a-2a2e3928adaa" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="58e13795-bf8a-4a96-8fda-b04a028d433d" CvTextArea="792, 359, 67, 13" CvTextArgument="Password" CvType="Text" DesignTimeRectangle="793, 356, 66, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" Guid="6311921f-82c8-4978-bf23-8a0744e59d63" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="89153c845b0ff9f6d9108cea26b36407.png" xmlns="">0Gk7cSyU350WD1Qb7Ea__3A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Open CRM and Save Leads",
+  "Type": "App",
+  "Id": "nQ5vC0vn7E2jX6PgmzPpaA",
+  "Reference": "ssTzUD_YqEWVAnjaEpo5Kg/nQ5vC0vn7E2jX6PgmzPpaA",
+  "Created": "2025-08-22T13:28:32.3825561Z",
+  "Updated": "2025-08-22T13:28:32.3825561Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

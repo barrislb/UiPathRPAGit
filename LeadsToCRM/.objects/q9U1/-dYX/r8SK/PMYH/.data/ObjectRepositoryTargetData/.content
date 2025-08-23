@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="iYHdQZLeFEOg4WnHfyenuw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="9c1d013d-7936-4f9f-99e5-02d46c4d5d11" CvElementArea="792, 476, 352, 36" CvType="InputBox" DesignTimeRectangle="793, 477, 350, 34" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='City' tag='INPUT' type='text' class='form-control' placeholder='Enter city' aaname='City' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="52c5caf9-324c-4141-9753-9906575f1698" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9c1d013d-7936-4f9f-99e5-02d46c4d5d11" CvTextArea="792, 455, 28, 16" CvTextArgument="City" CvType="Text" DesignTimeRectangle="793, 452, 26, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl class='form-label' tag='LABEL' aaname='City' /&gt;" Guid="8c8c97cb-05fa-4cd1-b1d7-879299d4dc3c" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="23df1b0a46dce6351420e2bc4b1fd6f8.png" xmlns="">0u3n22Bz8KkaB_eGULGsJQw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

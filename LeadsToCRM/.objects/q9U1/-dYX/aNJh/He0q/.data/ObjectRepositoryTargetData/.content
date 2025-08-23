@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="sN0pg2h6q0qVU6mcN_UHgQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/customers.html" CVScreenId="729ae7b2-3bdf-4e03-989a-f08c95b5ccea" CvElementArea="411, 225, 122, 32" CvTextArea="425, 235, 95, 13" CvTextArgument="New Customer" CvType="Button" DesignTimeRectangle="413, 227, 119, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl id='new-customer' tag='A' /&gt;" Guid="d82ff59c-1374-4c07-ab05-5ce5deb4c4f1" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="1508e90db23c89c1900d9127828968d8.png" xmlns="">0SjYRLxg9N0-k9ksXwxdjMQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

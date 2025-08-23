@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Verify Log-In",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "i1EaIy_ylk-LmOKiFqObPA",
+  "Reference": "ssTzUD_YqEWVAnjaEpo5Kg/i1EaIy_ylk-LmOKiFqObPA",
+  "ParentRef": "ssTzUD_YqEWVAnjaEpo5Kg/Q7ZDnR1LckOUmG8tTtpVsA",
+  "Created": "2025-08-22T13:30:32.3752253Z",
+  "Updated": "2025-08-22T13:30:32.3752253Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
