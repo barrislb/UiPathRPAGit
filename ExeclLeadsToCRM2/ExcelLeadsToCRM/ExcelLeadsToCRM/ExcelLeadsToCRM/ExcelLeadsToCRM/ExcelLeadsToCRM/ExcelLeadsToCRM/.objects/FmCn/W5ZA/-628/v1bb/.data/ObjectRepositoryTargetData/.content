@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="TeuDnZpU6k6SR8zu--p51g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/add-customer.html" CVScreenId="a88f26eb-8a54-40b5-8eac-db8ce9392be1" CvElementArea="792, 637, 16, 16" CvType="CheckBox" DesignTimeRectangle="793, 638, 13, 13" ElementType="CheckBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" Guid="63aca249-5701-49b5-9e97-5819c0cbd72b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customer Service - Add Customer' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="bed69b0c31363c9d5e17156a00069956.png" xmlns="">04XBuUTTQeEqeKZMR8sFA5Q</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">TypeInto</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

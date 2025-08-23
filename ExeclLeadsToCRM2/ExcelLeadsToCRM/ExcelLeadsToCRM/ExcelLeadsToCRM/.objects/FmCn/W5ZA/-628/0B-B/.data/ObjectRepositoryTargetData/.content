@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="e76zRxL0b0qKBiNZUj5UGQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/customer-success.html" CVScreenId="68f9578f-fe7a-4129-8e03-067119b60654" CvType="AnyWordGroup" DesignTimeRectangle="413, 167, 1110, 38" FullSelectorArgument="&lt;webctrl id='Success' tag='DIV' innertext='   Success! New customer added.        ×    ' /&gt;" Guid="6b67da68-c94a-4817-936e-36345e80c2e5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="ce8c5ad3e47335ac069b196a74c21843.png" xmlns="">0TfXqIbaOhkiRA4GsihHlsw</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">GetText</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

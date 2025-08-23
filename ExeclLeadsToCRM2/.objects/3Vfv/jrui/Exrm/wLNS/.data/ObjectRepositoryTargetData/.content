@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="Y18wVInCzEOy8W32gpb5WQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/customer-success.html" CVScreenId="c53bd39c-759c-4757-8f42-ebb5a866425a" CvTextArea="428, 231, 202, 13" CvTextArgument="Success! New customer added." CvType="Text" DesignTimeRectangle="413, 219, 1110, 38" FullSelectorArgument="&lt;webctrl id='Success' tag='DIV' /&gt;" Guid="655f9afb-8986-4698-a6c4-fcd6baca0012" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Customers' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="c10f88578de4f17cebca45664f453a40.png" xmlns="">0kvXwmoXqG0-HmQPrx_yUXw</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">CheckState</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="vl_Tzig2WUOSC1yxcTeEew" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="automationplayground.com/crm/sign-out.html" CVScreenId="62fd9f96-6565-4176-b9ad-f0b46a260e96" CvTextArea="907, 189, 153, 32" CvTextArgument="Signed Out" CvType="Text" DesignTimeRectangle="830, 187, 306, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' aaname='Signed Out' /&gt;" Guid="2c3e7ed1-24b0-4a38-ab91-d191c9f43491" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Signed Out' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="822706aaa5767dd8e22ceb5ed8082b94.png" xmlns="">0RBRBsUKbXUWj_W6cK1qcIA</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">CheckState</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>
